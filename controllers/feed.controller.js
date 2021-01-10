@@ -2,6 +2,10 @@ const fetch = require("node-fetch");
 
 const accessToken = process.env.BASIC_DISPLAY_ACCESS_TOKEN_KAYASTHA;
 
+const fetchMore = async (end_cursor) => {
+  let user_id = 4712430024;
+  let url = `https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables={'id':'${user_id}','first':${50},'after':'${end_cursor}'}`;
+};
 async function selectFeedsRoot(profileName) {
   const baseUrl = "https://www.instagram.com";
   const profileUrl = `${baseUrl}/${profileName}`;
